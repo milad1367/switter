@@ -1,0 +1,46 @@
+<div id="nav">
+</div>
+<div class="edit-profile">
+  <article>
+    <form>
+      <div class="item">
+        <label class="i-cam" for="profile-pic">
+    	      <i class="material-icons">add_a_photo</i>
+    	      <span>choose a picture</span>
+       </label>
+       <label>
+           <input id="profile-pic" type="file" style="display: none;" ng-model="hero.picUrl" onchange="angular.element(this).scope().previewFile(this)" >
+           <img id='img' ng-hide="true" class="profile" ng-src=""  height="60px"; width="60px" " alt="Image preview...">
+       </label>
+     </div>
+     <div class="item">
+         <label class="i-user">
+             <i class="material-icons">person</i>
+             Full name  
+         </label>
+         <input type ="text" ng-model="hero.name"  name="name" ng-value="hero.name">
+     </div>
+	<div class="item">
+	    <label class="i-skill">
+	        <i class="material-icons">star</i>
+	        skills
+	    </label>
+	    <input type="text" ng-model="hero.skills"  ng-value="hero.skills" name="skills" />
+	</div>
+	<div class="item">
+	    <label class="i-phone">
+	        <i class="material-icons">phone</i>
+	        phone 
+	    </label>
+	    <input type="number" ng-model="hero.phoneNumber" name="phoneNumber" ng-value="hero.phoneNumber" />
+	</div>
+ </form>
+      <div class="i-submit">
+      <label></label>
+       <md-button class="i-submit-btn" type="submit" value="save" ng-click="save()">save</md-button>
+    </div>
+ </article>
+</div>
+
+
+

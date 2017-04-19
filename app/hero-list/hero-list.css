@@ -1,0 +1,69 @@
+.intro{
+	background-color: white;
+	padding: 9em 0;   
+	z-index: 1; 
+}
+a:hover{
+    color:white;
+    cursor: pointer;
+}
+.intro section {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.intro svg stop:nth-child(1) {
+    stop-color: #310CEC;
+}
+.intro svg stop:nth-child(2) {
+    stop-color: #CB5E7C;
+}
+.intro .col1 svg text {
+    text-anchor: middle;
+
+}
+.intro svg text {
+     direction: ltr;
+    font-size: 2.12rem;
+    dominant-baseline: central;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: bold;
+}
+.intro-try {
+	margin-top: 15em;
+}
+
+.intro-btn{	
+	font-size: 1.33em;
+    width: 15em;
+    line-height: 2.4em;
+    padding: .75em 1em .45em;
+    background: #009688;
+    border-radius: .25em;
+    color: white;
+    font-family: 'Inconsolata', monospace;
+    text-transform: capitalize ;
+
+}   
+.page_block{
+    padding-top: 4em;
+	padding-bottom: 5em;
+}
+.page_block h2,p {
+	font-family: 'Inconsolata', monospace;
+    text-transform: capitalize ;
+}
+.page_block h2{
+	font-weight: 400;
+	padding-bottom: 1em;
+	font-size: 3em;
+}
+.page_block p {
+    font-size: 1.33em;
+    font-weight: 200;
+    color: #323742;
+}
+.intro-btn:not([disabled]):hover {
+	background-color: #009668;
+}

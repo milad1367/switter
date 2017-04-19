@@ -1,0 +1,47 @@
+<navbar></navbar>
+<div class="form">
+    <div layout="column" layout-gt-sm="row" class="section">
+        <div id="popupContainer" class="login" ng-cloak>
+            <label>
+                <h1> login </h1> </label>
+            <md-content class="md-no-momentum">
+                <md-input-container class="md-icon-float md-block ">
+                    <label>name or email</label>
+                    <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+                    <input ng-model="$ctrl.user.name" type="text">
+                </md-input-container>
+                <md-input-container md-no-float class="md-block">
+                    <md-icon md-svg-src="img/icons/ic_lock_black_24px.svg"></md-icon>
+                    <input  ng-model="$ctrl.user.password" type="password" placeholder="password">
+                </md-input-container>
+            </md-content>
+            <md-button ng-click="$ctrl.logIn($ctrl.user)" class="md-accent md-raised md-hue-1"><b>log in</b></md-button>
+        </div>
+        <div class="or">
+            <span><b>or</b></span>
+        </div>
+        <div class="register">
+            <label>
+                <h1> register </h1> </label>
+            <md-content class="md-no-momentum">
+                <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>name</label>
+                    <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+                    <input ng-model="$ctrl.newUser.name" type="text">
+                </md-input-container>
+                <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>email</label>
+                    <md-icon md-svg-src="img/icons/ic_email_black_24px.svg" class="email"></md-icon>
+                    <input ng-model="$ctrl.newUser.email" type="text">
+                </md-input-container>
+                <md-input-container md-no-float class="md-block">
+                    <md-icon md-svg-src="img/icons/ic_lock_black_24px.svg"></md-icon>
+                    <input ng-model="$ctrl.newUser.password" type="password" placeholder="password">
+                </md-input-container>
+            </md-content>
+            <md-button ng-click="$ctrl.register($ctrl.newUser)" class="md-accent md-raised md-hue-1"><b>register</b></md-button>
+        </div>
+    </div>
+</div>

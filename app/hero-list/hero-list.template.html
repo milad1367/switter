@@ -1,0 +1,49 @@
+<div ng-hide="$ctrl.token.length > 3 " class="intro">
+  <section class="col1">
+    <h1>
+      <svg version="1.1" role="heading" aria-labelledby="Resume builder for experts" viewBox="0 -6 500 50">
+        <title>Resume builder for experts</title>
+        <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0%">
+          <stop offset="0%"></stop>
+          <stop offset="100%"></stop>
+        </linearGradient>
+        <text alttext="Resume builder for experts" fill="url(#gradient)" y="40%" x="50%">The place to introduce yourself ! </text>
+      </svg>
+    </h1>
+    <div class="intro-try" layout="row" layout-align="center center" >
+      <md-button href='#!/login' class="intro-btn"> <span>Try Now</span> !</md-button>
+    </div>
+  </section>
+</div>
+<div class="hero-list">
+  <div ng-hide="$ctrl.token.length > 3 " class="page_block">
+    <section class="center">
+      <h2> you can see People join social </h2>
+      <p>Do not want to join us?</p>
+    </section>
+  </div>
+  <div class="main-hero">
+    <div style="padding-bottom:3em;" ng-hide="$ctrl.CurrentUser.userId.length < 3">
+      <md-input-container class="md-block">
+        <label></label>
+          <textarea ng-model="$ctrl.user.twitt" placeholder="what's happening?" name="twitt" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+      <div layout="row">
+        <div class="scroll_tweet" ></div>
+        <md-button ng-click="$ctrl.twitt($ctrl.user)" type="submit" name="submit"  class="md-raised md-primary">tweet</md-button>
+      </div>
+    </div>
+    <md-content>
+      <md-list class="md-list">
+        <md-list-item class="md-item md-3-line" ng-repeat="twitt in $ctrl.twitts">
+          <img ng-src="img/{{$ctrl.showTwitts(twitt,'img')}}" class="md-avatar" style="width:60px; height:60px">
+          <div class="md-list-item-text">
+            <h3> {{$ctrl.showTwitts(twitt,'name')}} </h3>
+            <p class="twitts-message"> {{twitt.message}} </p>
+          </div>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="nav" ng-cloak>
+    <section layout="row">
+        <label class="home">
+            <a href="#!/"><i class="material-icons md-white md-36">home</i></a>
+        </label>
+        <label class="about">
+            <a href="#!/about-me"><i class="material-icons md-white md-36">person_outline</i> </a>
+        </label>
+
+        <div class="grow"></div>
+        <div class="menu" ng-hide="!$ctrl.fProfile">
+            <div class="md-menu-demo">
+                <md-menu ng-hide="!$ctrl.fProfile">
+                    <md-button class="nav-md-button" ng-click="$ctrl.openMenu($mdMenu, $event)">
+                        <img ng-if="!$ctrl.CurrentUser.picUrl" ng-src="img/profile.jpg" style="width: 40px;height: 40px;">
+                        <img ng-if="$ctrl.CurrentUser.picUrl" ng-src="img/{{$ctrl.CurrentUser.picUrl}}" style="width: 40px;height: 40px;">
+                        <span class="nav-font"> {{$ctrl.CurrentUser.name}} </span>
+                    </md-button>
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.viewProfile()">
+                                <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+                                view profile
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button disabled="disabled" ng-click="">
+                                <md-icon md-svg-icon="call:voicemail"></md-icon>
+                                list
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button disabled="disabled" ng-click="">
+                                <md-icon md-svg-icon="call:voicemail"></md-icon>
+                                help center
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$ctrl.logOut()">
+                                <md-icon md-svg-icon="call:voicemail"></md-icon>
+                                log out
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,44 @@
+
+.about{
+	padding-bottom: 3em;
+}
+.about-nav{
+	background-color: #008EE8;
+	height: 5em;
+}
+.about-nav {
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.about-nav span{
+	color:white;
+}
+
+.about-main  {
+	margin-top: 5em;
+	padding: 3em 1em 3em 1em;
+	background-color: white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+   
+    text-align: center;
+}
+.about-main  h3,h4{
+	padding-top: 1.3em;
+}
+.about-nav a {
+	padding-left: 2em;
+	position: relative;
+	top:1em;
+	color: white;
+}
+.about-nav span{
+	color:white;
+}
+.about-nav .material-icons{
+	position: relative;
+	top:0.3em;
+}

@@ -1,0 +1,9 @@
+  <form name="addHero"  class="simple-form">
+    <label>Name: <input type="text" ng-model="$ctrl.user.name" name="username" required /></label><br/>
+    <label>E-mail: <input type="email" ng-model="$ctrl.user.email" name="email" required /></label><br/>
+    <label>
+      password: <input type="password" ng-model="$ctrl.user.password" name="password" required>
+    </label><br/>
+    <input type="button" ng-click="$ctrl.reset()" value="Reset" />
+    <button type="submit" ng-click="$ctrl.save($ctrl.user)" ng-disabled="addHero.$invalid">Save</button>
+  </form> 
