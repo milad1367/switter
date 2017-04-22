@@ -106,9 +106,6 @@ app.post('/edit-profile',upload.single('imgProfile'), function(req,res,next) {
    )
 })
 
-app.get('/', function (req, res) {
-
-})
 
 app.get('/get',function(req,res,next){               
 var cursor = db.collection('users').find().toArray(function(err, results) {
