@@ -19,10 +19,11 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log('mongooos!');
 });
-
+/*
 var ttt = jwt.sign({ foo: 'bar' }, 'shhhhh');
 var decode = jwt.verify(ttt,'shhhhh');
 var bearer = ttt.split('.');
+*/
 app.use(cors())
 
 app.post('/me',function(req,res,next){
@@ -129,6 +130,7 @@ app.post('/register',function(req,res,next){
 	    else{
         var token = jwt.sign(req.body,'shhhhh');
         bearer = token.split('.')[1];
+        //console.log(bearer)
 	      db.collection('user').save({name: req.body.name , email:req.body.email ,password:req.body.password ,picUrl:"",skills:"",phoneNumber:911,token:bearer})
         db.collection('user').find(
           {'email':req.body.email},
