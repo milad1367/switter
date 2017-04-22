@@ -14,7 +14,6 @@ mongoose.connect(url);
 var db = mongoose.connection;
 var token = {logIn:'',userId:'',name:''};
 var jwt = require('jsonwebtoken');
-app.use(express.static('app'))
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log('mongooos!');
@@ -26,6 +25,7 @@ var bearer = ttt.split('.');
 */
 app.use(cors())
 var port = process.env.PORT || 9000;
+app.use(express.static(__dirname + '/app'));
 app.listen(port);
 app.post('/me',function(req,res,next){
   token = JSON.parse(req.body.token)
