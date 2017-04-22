@@ -19,7 +19,7 @@
           self.userTwitt.msg = self.user.twitt;
           self.userTwitt.picUrl = CurrentUser.picUrl;
           self.user.twitt = "" ;    
-          $http.post('http://localhost:9000/twitt',self.userTwitt)
+          $http.post('/twitt',self.userTwitt)
               .then(function success (res){
                 $route.reload();
               },function error(res) { 
@@ -29,14 +29,14 @@
         }
       }
         self.CurrentUser = CurrentUser ;
-        $http.get('http://localhost:9000/twitts')
+        $http.get('/twitts')
               .then(function success(res){
                   self.twitts = res.data ;  
                  },
                  function error(){
                   console.log('error in resive twitts');
                  });
-		    $http.get('http://localhost:9000/get').then(function(response){
+		    $http.get('/get').then(function(response){
 		 	    self.heroes = response.data;
 		    });
 
