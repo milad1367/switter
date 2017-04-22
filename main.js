@@ -4,20 +4,22 @@ var cors = require('cors')
   , assert = require('assert');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var MongoClient = require('mongodb').MongoClient
 var multer  = require('multer')
 var upload = multer({ dest: 'app/img/' })
 var ObjectId = require('mongodb').ObjectID;
 var url = 'mongodb://localhost:27017/social_db';
-mongoose.connect(url);
-var db = mongoose.connection;
+var db;
 var token = {logIn:'',userId:'',name:''};
 var jwt = require('jsonwebtoken');
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('mongooos!');
-});
+
+
+MongoClient.connect('mongodb://admin:miladas01@ds115071.mlab.com:15071/social_db', function (err, dataBase) {
+  if (err) throw err
+  db = dataBase;
+})
+
+
 /*
 var ttt = jwt.sign({ foo: 'bar' }, 'shhhhh');
 var decode = jwt.verify(ttt,'shhhhh');
@@ -29,7 +31,7 @@ app.use(express.static(__dirname + '/app'));
 app.listen(port);
 app.post('/me',function(req,res,next){
   token = JSON.parse(req.body.token)
-  var me = db.collection('user').find({'token':token}).toArray(function(err,results){
+  var me = db.collection('users').find({'token':token}).toArray(function(err,results){
      if (err) {
        res.json({
          type: false,
@@ -54,7 +56,7 @@ app.post('/me',function(req,res,next){
 
 //for commit
 app.post('/get-hero', function (req,res,next){
-   db.collection('user').find(
+   db.collection('users').find(
      {'_id':ObjectId(req.body.userId)},
      function(err,results){
        results.toArray(function(err,result){
@@ -89,7 +91,7 @@ app.post('/edit-profile',upload.single('imgProfile'), function(req,res,next) {
 
    }
    res.send(infProfile);
-   db.collection('user').updateOne(
+   db.collection('users').updateOne(
      {'_id':ObjectId(infProfile._id)},
      {
       $set:{
@@ -109,13 +111,13 @@ app.get('/', function (req, res) {
 })
 
 app.get('/get',function(req,res,next){               
-var cursor = db.collection('user').find().toArray(function(err, results) {
+var cursor = db.collection('users').find().toArray(function(err, results) {
   res.send (results);
 })
 })
 
 app.post('/register',function(req,res,next){
-	var tt = db.collection('user').find({$or: [{'name': req.body.name},{'email': req.body.email}]}).toArray(function(err,results){
+	var tt = db.collection('users').find({$or: [{'name': req.body.name},{'email': req.body.email}]}).toArray(function(err,results){
         if (err) {
           res.json({
             type : false,
@@ -132,8 +134,8 @@ app.post('/register',function(req,res,next){
         var token = jwt.sign(req.body,'shhhhh');
         bearer = token.split('.')[1];
         //console.log(bearer)
-	      db.collection('user').save({name: req.body.name , email:req.body.email ,password:req.body.password ,picUrl:"",skills:"",phoneNumber:911,token:bearer})
-        db.collection('user').find(
+	      db.collection('users').save({name: req.body.name , email:req.body.email ,password:req.body.password ,picUrl:"",skills:"",phoneNumber:911,token:bearer})
+        db.collection('users').find(
           {'email':req.body.email},
           function(err,results){
             results.toArray(function(err,result){
@@ -151,7 +153,7 @@ app.post('/register',function(req,res,next){
 })
 app.post('/login',function(req,res,next){
   
-  var userLogin =	db.collection('user').find({$and: [{'name': req.body.name},{'password':req.body.password}]}).toArray(function(err,results){
+  var userLogin =	db.collection('users').find({$and: [{'name': req.body.name},{'password':req.body.password}]}).toArray(function(err,results){
   	 if (err) {
        res.json({
          type: false,
