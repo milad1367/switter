@@ -13,7 +13,7 @@ angular.
       self.token = {} ;
       self.save = function(user){
         self.master = angular.copy(user);
-        $http.post('http://localhost:9000/register',self.master).
+        $http.post('/register',self.master).
           then(function(response){
             self.token = response.data;
             if(self.token.logIn == "pass"){

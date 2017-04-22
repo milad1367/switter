@@ -12,7 +12,7 @@ component('profile',{
       $scope.token = localStorage.getItem('token');
       $scope.CurrentUser = CurrentUser ;
       var img = angular.element(document.querySelector('#img'));
-      $http.post('http://localhost:9000/me',{'token':$scope.token}).then
+      $http.post('/me',{'token':$scope.token}).then
         (function(res){
            $scope.hero = res.data.user ;
            $scope.imgSrc.src = "img/"+$scope.hero.picUrl ;
@@ -53,7 +53,7 @@ component('profile',{
           hero = JSON.stringify(hero) ;
           profileFormData.append('imgProfile',file);
           profileFormData.append('infProfile',hero);
-          $http.post('http://localhost:9000/edit-profile',profileFormData,{
+          $http.post('/edit-profile',profileFormData,{
             headers:{'Content-type': undefined}
           })
                .then(function success(res){

@@ -31,7 +31,7 @@ component('login',{
 		 self.logIn = function(user) {
 		   var userData = angular.copy(user);
 		   if ( userData != null ) {
-		   $http.post('http://localhost:9000/login',userData)
+		   $http.post('/login',userData)
 		        .then(function(res){
 		      	    if(res.data.type == true){
 		      	  	  self.currentUser = { userId:res.data.user.userId,name:res.data.user.name,picUrl:res.data.user.picUrl};
@@ -59,7 +59,7 @@ component('login',{
           var master ={};
           master = angular.copy(newUser);
           if(master != null) {
-            $http.post('http://localhost:9000/register',master).
+            $http.post('/register',master).
             then(function(res){
               if(res.data.type == true ){
                 CurrentUser.userId = res.data._id;

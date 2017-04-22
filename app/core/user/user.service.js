@@ -5,7 +5,7 @@ angular.
   factory('user', 
     ['$resource',
       function($resource) {
-        return $resource('http://localhost:9000/:req', {}, {
+        return $resource('/:req', {}, {
           query: {
             method: 'GET',
             params: {req: 'curent-user'},

@@ -17,7 +17,7 @@ angular.
         
        
        if(token.length > 2 ){
-        $http.post('http://localhost:9000/me',{token : token})
+        $http.post('/me',{token : token})
           .then(function success (res){
               if(res.data.type == true){
                // this.me = res.data.user;
