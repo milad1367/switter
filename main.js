@@ -33,7 +33,7 @@ app.post('/me',function(req,res,next){
      if (err) {
        res.json({
          type: false,
-         data: "error occured in login" + err 
+         data: "error occured in loginnn" + err 
        });
      } else  
      if (results.length > 0) {
