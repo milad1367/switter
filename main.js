@@ -25,7 +25,8 @@ var decode = jwt.verify(ttt,'shhhhh');
 var bearer = ttt.split('.');
 */
 app.use(cors())
-
+var port = process.env.PORT || 9000;
+app.listen(port);
 app.post('/me',function(req,res,next){
   token = JSON.parse(req.body.token)
   var me = db.collection('user').find({'token':token}).toArray(function(err,results){
@@ -177,8 +178,4 @@ app.get('/twitts',function(req,res,next){
    db.collection('twitts').find().sort({sent: -1}).toArray(function(err,result){
      res.send(result)
    });
-})
-
-app.listen(9000, function () {
-
 })
