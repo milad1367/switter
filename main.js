@@ -8,7 +8,7 @@ var MongoClient = require('mongodb').MongoClient
 var multer  = require('multer')
 var upload = multer({ dest: 'app/img/' })
 var ObjectId = require('mongodb').ObjectID;
-var url = 'mongodb://localhost:27017/social_db';
+//var url = 'mongodb://localhost:27017/social_db';
 var db;
 var token = {logIn:'',userId:'',name:''};
 var jwt = require('jsonwebtoken');
