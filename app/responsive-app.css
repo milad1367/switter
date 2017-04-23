@@ -71,6 +71,9 @@
   }
   .page_block h2 {
   font-size: 2em
+  }
+  .intro svg text {
+  font-size: 1.6rem;
 }
 
 }
