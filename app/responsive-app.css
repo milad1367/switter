@@ -17,10 +17,9 @@
   	width:80%;
   }
   .or{
-display: block;
+     display: block;
      width: 100%;
      margin: 1em; 
-
 }
 .or:after {
     content: '';
@@ -55,6 +54,12 @@ display: block;
 .i-cam{
 	width:10em;
 }
+.page_block h2 {
+  font-size: 2.5em
+}
+.intro svg text {
+  font-size: 1.8rem;
+}
 }
 
 @media only screen and (max-width:500px){
@@ -64,5 +69,8 @@ display: block;
   .form .section {
   	width:90%;
   }
+  .page_block h2 {
+  font-size: 2em
+}
 
 }
