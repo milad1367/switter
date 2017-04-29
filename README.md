@@ -14,5 +14,5 @@ npm install
 Also run this to create bundle.js with browserify, it will update the file everytime you make a change in your JavaScript files.
 
 ```bash
-npm start
+npm start or nodemon
 ```
