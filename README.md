@@ -1,5 +1,5 @@
 # switter
-this is simple croud project as a practic with MongoDB, Express.js, AngularJS,Node.js and using angular material for ui . Feel free to fork ,registr and create your profile .   
+this is simple croud project as a practic with MongoDB, Express.js, AngularJS,Node.js and using angular material for ui . Feel free to fork ,register and create your profile .   
 ## Demo
 <a href="https://blooming-beach-29819.herokuapp
 .com/#!/"> live demo </a> 
