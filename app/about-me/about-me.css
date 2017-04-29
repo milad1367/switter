@@ -6,6 +6,9 @@
 	background-color: #008EE8;
 	height: 5em;
 }
+.about a  {
+	color:blue;
+}
 .about-nav {
 	width:100%;
 	margin-left: auto;
