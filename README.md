@@ -6,33 +6,31 @@ but now for the test, you can go to the live demo and register a new user and ad
 you can add a profile picture and other things.
 too you can edit your profile.
 ## frontend
-   Angular,Angular-Material
+   <a href="https://angularjs.org/">Angular</a>,<a href="https://material.angularjs.org/latest/">Angular-Material
 ## backend 
-   Nodjs(Express.js)
+   <a href="https://nodejs.org/en/"> Nodjs </a> (<a href="https://expressjs.com/">Express.js</a>)
 ## DB
-   MongoDb(Mongoose)
+   <a href="https://www.mongodb.com/">MongoDb</a>(<a href="http://mongoosejs.com/">Mongoose</a>)
    
 # Demo
 <a href="https://agile-chamber-49704.herokuapp.com/#!/">  live demo </a> 
-
 <p align="center">
-  <img src="http://miladasghari.com/projects/switter/1.png" width="350" />
+  <img src="http://miladasghari.com/projects/switter/5.png"/>
+</p>
+<p align="center">
+  <img src="http://miladasghari.com/projects/switter/1.png" />
 </p>
   <p align="center">
-  <img src="http://miladasghari.com/projects/switter/2.png" width="350" />
+  <img src="http://miladasghari.com/projects/switter/2.png" />
 </P>
 <p align="center">
-  <img src="http://miladasghari.com/projects/switter/3.png" width="350" />
+  <img src="http://miladasghari.com/projects/switter/3.png"/>
 </p>
 <p align="center">
-  <img src="http://miladasghari.com/projects/switter/4.png" width="350" />
+  <img src="http://miladasghari.com/projects/switter/4.png"/>
 </p>
-<p align="center">
-  <img src="http://miladasghari.com/projects/switter/5.png" width="350" />
-</p>
-<p align="center">
-  <img src="http://miladasghari.com/projects/switter/6.png" width="350" />
-</p>
+
+
 ## Quickstart
 
 The project dependencies are not included in this repository. To install all the dependencies you will need NPM. Run this command in the main directory:
