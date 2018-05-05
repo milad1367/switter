@@ -2,7 +2,7 @@
 switter is a good platform for creating a social network like Twitter.
 I think you will be happy if you see a powerful and simple platform created with Angular, Nodjs,  MongoDB and angular-material!
 if you have decided to create a Social network platform you can fork it and added your new features.
-but now for the test, you can go to the live demo and register a new user and add new tweet :D 
+but now for the test, you can go to the <a href="https://agile-chamber-49704.herokuapp.com/#!/">live demo </a> and register a new user and add new tweet :D 
 you can add a profile picture and other things.
 too you can edit your profile.
 ## frontend
